@@ -4,3 +4,19 @@
     display: flex;
     justify-content: space-between;
 }
+
+.search-area{
+    padding-top: 50px;
+}
+
+.no-padding-right{
+    padding-right: 0px !important;
+}
+
+.no-padding-left{
+    padding-left: 0px !important;
+}
+
+.result-block{
+    display: inline-block;
+}
