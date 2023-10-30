@@ -1,0 +1,22 @@
+<div class="card-container">
+  <span class="pro">PRO</span>
+  <img class="round" src="https://randomuser.me/api/portraits/men/79.jpg" alt="user" />
+  <h3><%= @user.first_name %></h3>
+  <h6>New York</h6>
+  <p><%= @user.email %></p>
+  <div class="buttons">
+    <%= button_to "Portfolio", my_portfolio_path, method: :get, class:"btn-primary"%>   
+    <button class="primary ghost">
+      Following
+    </button>
+  </div>
+  <div class="skills">
+    <h6>Following</h6>
+    <ul>
+      <% @user.friends.each do |friend|%>
+        <li><%= friend.first_name%></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

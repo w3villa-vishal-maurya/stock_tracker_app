@@ -1,18 +1,12 @@
-<div class="row t5-padding">
-  <h1 class="col-9">My Portfolio</h1>
-  <% if user_signed_in? %>
-    <p class="col-3">
-      <%= fa_icon "user"%>
-      <%= link_to "#{current_user.first_name} #{current_user.last_name}", user_path(current_user), class:""%>
-    </p>
-  <% end %>
-</div>
+<h1>
+  Friends
+</h1>
 <div class="search-area">
-  <h3>Search Stock</h3>
-  <%= form_tag search_stock_path, method: :get, remote: true do %>
+  <h3>Search Friends</h3>
+  <%= form_tag search_friend_path, method: :get, remote: true do %>
     <div class="form-group row">
       <div class="col-sm-9 no-padding-right">
-        <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
+        <%= text_field_tag :friend, params[:friend], placeholder: "Type name", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-sm-3 no-padding-left">
         <%= button_tag type: :submit, class: "btn btn-success" do %>
@@ -24,9 +18,7 @@
     </div>
   <% end %>
 </div>
-<%= render partial: "users/result" %>
-<div id="results">
-</div>
-<% if !@tracked_stocks.empty?%>
-  <%= render partial: "stocks/list"%>
+
+<% if !@my_friends.empty?%>
+  <%= render partial: "friends/list"%>
 <%end%>
